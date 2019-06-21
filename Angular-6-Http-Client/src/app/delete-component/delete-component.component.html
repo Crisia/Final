@@ -1,0 +1,91 @@
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <div [hidden]="submitted">
+                <form #editCustomerForm="ngForm">
+            
+                  <div class="form-group">
+                    <label for="nameemployee">Nombre del Empleado</label>
+                    <input type="text" class="form-control" id="nameemployee" placeholder="" 
+                    required
+                    [(ngModel)]="custEdit.nameemployee" name="nameemployee" #nameemployee="ngModel">
+                    <div [hidden]="nameemployee.valid || nameemployee.pristine"
+                         class="alert alert-danger">
+                        El nombre es requerido
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="identificacion">Identificacion</label>
+                    <input type="text" class="form-control" id="identificacion" placeholder="Give Customer's LastName"
+                    required
+                    [(ngModel)]="custEdit.identificacion" name="identificacion" #identificacion="ngModel">
+                    <div [hidden]="identificacion.valid || identificacion.pristine"
+                         class="alert alert-danger">
+                        La identificacion es requerido
+                    </div>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Give Customer's LastName"
+                    required
+                    [(ngModel)]="custEdit.email" name="email" #email="ngModel">
+                    <div [hidden]="email.valid || email.pristine"
+                         class="alert alert-danger">
+                        El email es requerido
+                    </div>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="idManager">Codigo del Manager</label>
+                    <input type="text" class="form-control" id="idManager" placeholder="Give Customer's LastName"
+                    required
+                    [(ngModel)]="custEdit.idManager" name="idManager" #idManager="ngModel">
+                    <div [hidden]="idManager.valid || idManager.pristine"
+                         class="alert alert-danger">
+                        El Manager es requerido
+                    </div>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="picture">Imagen</label>
+                    <input type="text" class="form-control" id="picture" placeholder="Give Customer's LastName"
+                    required
+                    [(ngModel)]="custEdit.picture" name="picture" #picture="ngModel">
+                    <div [hidden]="picture.valid || picture.pristine"
+                         class="alert alert-danger">
+                        La foto es requerido
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone">Age</label>
+                    <input type="number" class="form-control" id="age" 
+                    placeholder="Give Customer's Age"
+                    required
+                    [(ngModel)]="custEdit.phone" name="phone" #phone="ngModel">
+                    <div [hidden]="phone.valid || phone.pristine"
+                         class="alert alert-danger">
+                        El telefono es requerido
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a routerLink="customer/edit" class="btn btn-light btn-sm" role="button" routerLinkActive="active">Create</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </div>
+ 
+</div>

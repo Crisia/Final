@@ -1,0 +1,85 @@
+<h3>Agregar Empleado</h3>
+<div [hidden]="submitted">
+    <form #addCustomerForm="ngForm">
+
+      <div class="form-group">
+        <label for="nameemployee">Nombre del Empleado</label>
+        <input type="text" class="form-control" id="nameemployee" placeholder="" 
+        required
+        [(ngModel)]="customer.nameemployee" name="nameemployee" #nameemployee="ngModel">
+        <div [hidden]="nameemployee.valid || nameemployee.pristine"
+             class="alert alert-danger">
+            El nombre es requerido
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="identificacion">Identificacion</label>
+        <input type="text" class="form-control" id="identificacion" placeholder=""
+        required
+        [(ngModel)]="customer.identificacion" name="identificacion" #identificacion="ngModel">
+        <div [hidden]="identificacion.valid || identificacion.pristine"
+             class="alert alert-danger">
+            La identificacion es requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder=""
+        required
+        [(ngModel)]="customer.email" name="email" #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"
+             class="alert alert-danger">
+            El email es requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="idManager">Codigo del Manager</label>
+        <input type="text" class="form-control" id="idManager" placeholder=""
+        required
+        [(ngModel)]="customer.idManager" name="idManager" #idManager="ngModel">
+        <div [hidden]="idManager.valid || idManager.pristine"
+             class="alert alert-danger">
+            El Manager es requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="picture">Imagen</label>
+        <input type="text" class="form-control" id="picture" placeholder=""
+        required
+        [(ngModel)]="customer.picture" name="picture" #picture="ngModel">
+        <div [hidden]="picture.valid || picture.pristine"
+             class="alert alert-danger">
+            La foto es requerido
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Age</label>
+        <input type="number" class="form-control" id="age" 
+        placeholder=""
+        required
+        [(ngModel)]="customer.phone" name="phone" #phone="ngModel">
+        <div [hidden]="phone.valid || phone.pristine"
+             class="alert alert-danger">
+            El telefono es requerido
+        </div>
+      </div>
+      
+      <div class="btn-group btn-group-sm">
+      	<button type="button" class="btn btn-dark" (click)="goBack()">Regresar</button>
+      	<button type="button" class="btn btn-dark" (click)="addCustomer()" [disabled]="!addCustomerForm.form.valid">Agregar</button>
+      </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{customer.firstname}}  {{customer.lastname}}</span></p>
+	<div class="btn-group btn-group-sm">
+    	<button type="button" class="btn btn-dark" (click)="goBack()">Regresar</button>
+    	<button type="button" class="btn btn-dark" (click)="newCustomer(); addCustomerForm.reset()">Agregar</button>
+    </div>
+</div>

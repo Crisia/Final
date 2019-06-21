@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Listado Posts</h1>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Identificacion</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Acciones</th>
+            <th scope="col">Acciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cust of customers | filter:filterPost;  let index = index">
+            <th  scope="col">{{cust.id}}</th>
+            <th scope="col">{{cust.nameemployee}}</th>
+            <th scope="col">{{cust.identificacion}}</th>
+            <th scope="col">{{cust.picture}}</th>
+            <th><button type="button" class="btn btn-danger" (click)="deleteCustomers(cust)">Eliminar</button></th>
+            
+            <th><button type="button" class="btn btn-light btn-sm" (click)="editar(cust)" data-toggle="modal" data-target="#myModal">Editar</button></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+<app-edit-customer [custEdit]="custEdit"></app-edit-customer>
+
+
