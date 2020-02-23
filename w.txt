@@ -1,0 +1,20 @@
+Estamos en el branch test Pasos para crear un indice
+jwdnhwbebde
+wendehnudhnue
+wnnewende
+1.PUT /shakespeare
+{
+ "mappings": {
+  
+   "properties": {
+duheuduegbudgeygds
+    "speaker": {"type": "keyword"},
+    "play_name": {"type": "keyword"},
+    "line_id": {"type": "integer"},
+    "speech_number": {"type": "integer"}
+   
+  }
+ }
+}
+
+2.
